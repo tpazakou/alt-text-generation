@@ -1,0 +1,46 @@
+# ------------------------ Model -------------------------------
+base_model_name: "llava-hf/llava-1.5-7b-hf"
+model: model
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.1
+
+# ------------------------ Dataset -------------------------------
+
+# the path to the jsonl file containing all the textual information
+# dataset_path: "../input/final_data_all.jsonl"
+dataset_path: "../input/concadia.jsonl"
+
+
+# the link to the zip file on Google Drive containing the concadia images
+image_zip_url: "https://drive.google.com/file/d/1gDhVlOwcGcwBT5LWYwgn9xEElGlKVpFb/view?usp=sharing"
+
+# the local archive (if it doesn't exist, it will be created after the download)
+image_zip_path: "../images/concadia_images.zip"
+
+# the path to where the Concadia images will be extracted
+img_unzipped_path: "../images/concadia_images"
+
+# the folder initially containing the ad2at images and eventually containing all the images
+images_path: "../input/images"
+
+# max token length
+max_length: 1024
+
+
+# ------------------------ Training -------------------------------
+batch_size: 8
+num_epochs: 2
+learning_rate: 2e-4
+weight_decay: 0.01
+beta: 0.1  # DPO beta
+max_grad_norm: 1.0
+patience: 3
+accumulation_steps: 4
+
+# ------------------------ Evaluation -------------------------------
+output_dir: "./output"
+save_best_only: True
+
+# ------------------------ Device -------------------------------
+device: "cuda"
