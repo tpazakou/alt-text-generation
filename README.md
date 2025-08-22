@@ -5,13 +5,14 @@ This repository contains data and training scripts for fine-tuning **LLaVA-7B** 
 
 
 <p align="center">
+<br>
   <img src="architecture.png" alt="Training pipeline diagram" width="80%">
 </p>
 
 ## Repository structure
 
 
-```bash
+```markdown
 |-- data
 |   `-- final_data_all
 
@@ -21,7 +22,8 @@ This repository contains data and training scripts for fine-tuning **LLaVA-7B** 
 |   |-- config_loader.py
 |   |   - Script to load and parse the configuration file.
 |   |-- main.py
-|   |   - Main entry point for training the model; handles dataset loading, model initialization, and training loop.
+|   |   - Main entry point for training the model; handles dataset loading, 
+    |     model initialization, and training loop.
 |   |-- train.py
 |   |   - Core training script for LoRA and DPO fine-tuning.
 |   `-- requirements.txt
